@@ -18,7 +18,7 @@ function init() {
     const colWork = document.getElementById('col-work');
     colWork.innerHTML = '<div class="column-title">업무 시간</div>';
 
-    for (let h = 9; h <= 19; h++) {
+    for (let h = 9; h <= 18; h++) {
         const row = document.createElement('div');
         row.className = 'hour-row';
 
@@ -67,7 +67,7 @@ function loadColors() {
         saveColors();
     } else {
         // Default color: Black
-        for (let h = 9; h <= 19; h++) {
+        for (let h = 9; h <= 18; h++) {
             for (let m = 0; m < 6; m++) {
                 dotColors[`${h}-${m}`] = '#000000';
             }
@@ -127,7 +127,7 @@ function setupThemeToggle() {
 }
 
 function resetAllColors() {
-    for (let h = 9; h <= 19; h++) {
+    for (let h = 9; h <= 18; h++) {
         for (let m = 0; m < 6; m++) {
             dotColors[`${h}-${m}`] = '#000000';
         }
@@ -203,7 +203,7 @@ function updateClock() {
     const progressText = document.getElementById('progress-info');
     if (progressFill) {
         const workStart = 9;
-        const workEnd = 20; // Includes the 19:00 hour row
+        const workEnd = 19; // Ends at 19:00 (covers 18:00 row)
         const totalWorkSeconds = (workEnd - workStart) * 3600;
         const currentSeconds = (now.getHours() * 3600) + (now.getMinutes() * 60) + now.getSeconds();
         const startSeconds = workStart * 3600;
@@ -215,7 +215,7 @@ function updateClock() {
         if (progressText) progressText.innerHTML = `업무시간 진행도 : <b>${progressPercent.toFixed(1)}%</b>`;
     }
 
-    for (let h = 9; h <= 19; h++) {
+    for (let h = 9; h <= 18; h++) {
         const label = document.getElementById(`label-${h}`);
         if (label) label.classList.toggle('current-hour', h === currentHour);
 
