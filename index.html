@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#f2f2f7">
+  <title>Time Dots</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="drag-region"></div>
+  <header class="header">
+    <div id="date-display" class="date-display"></div>
+    <button id="theme-toggle" class="theme-toggle">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </header>
+  <main class="main-content">
+    <div id="main-grid" class="main-grid">
+      <div id="col-work" class="column"></div>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-container">
+        <div id="progress-info" class="progress-info"></div>
+        <div class="progress-bar-bg">
+          <div id="daily-progress" class="progress-bar-fill"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="footer">
+    <button id="reset-colors-btn" class="reset-btn">시간 색상 초기화</button>
+  </div>
+
+  <div id="palette-overlay" class="palette-overlay">
+    <div id="color-palette" class="color-palette">
+      <div class="palette-header">
+        <span id="palette-title">시간 선택</span>
+        <button id="palette-close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div id="color-grid" class="color-grid"></div>
+    </div>
+  </div>
+
+  <div id="confirm-modal" class="confirm-modal-overlay">
+    <div class="confirm-modal">
+      <p>전체 시간이 기본 컬러로 초기화됩니다.</p>
+      <div class="confirm-modal-actions">
+        <button id="confirm-cancel" class="modal-btn cancel">취소</button>
+        <button id="confirm-reset" class="modal-btn reset">초기화</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+
+</html>
