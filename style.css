@@ -87,7 +87,9 @@ body {
   /* Takes available space */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 2svh;
+  /* Add some space from top */
   /* Centered vertically */
   align-items: center;
   gap: 1.5svh;

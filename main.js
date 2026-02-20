@@ -13,10 +13,11 @@ function createWindow() {
       nodeIntegration: true,
       contextIsolation: false,
     },
+    icon: path.join(__dirname, 'icon.png'),
   });
 
   win.loadFile('index.html');
-  
+
   // Optional: Open DevTools during development
   // win.webContents.openDevTools();
 }
